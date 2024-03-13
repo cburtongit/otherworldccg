@@ -7,4 +7,4 @@
 - Grave
 - Void
 Each player will have these zones:
-![Field zone layout](design/field.png)
+![Field zone layout](Design/field.png)
