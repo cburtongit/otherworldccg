@@ -10,7 +10,7 @@
 
 Each player will have these zones:
 ![Field zone layout](images/field.png)
-
+---
 ## <a id="mzones"></a>Monster Zones
 ### Gameplay Purpose:
 These are where 1 of the 2 types of card can be placed, 'Monster Cards'. These cards have the ability to do attack other monsters or the player directly if possible. The have an SP (Strength Points) value, can be 'Summoned' (placed on the field) by paying RP (Resource Points). Upon defeat by other monsters, destruction from card effects or being sacrificed for other summons/effects, they go to the Grave zone by default but can be sent to the Void or returned to the hand/deck if a card specifies.
@@ -35,7 +35,11 @@ Each monsterZone should contain the following values:
 - Adds the value of sp to the SP value of the cardObj stored. Adding a negative value will reduce the SP!
 ##### counterEffect()
 - Sets a flag on the cardObj that it's effect cannot be used ('countered' is a game keyword).
-### <a id="szone">Support Zone
+---
+## <a id="szone">Support Zone
+### Gameplay Purpose:
+### Implementation:
+### Methods & Functions:
 ---
 ## <a id="deck">Deck
 ### Gameplay Purpose:
@@ -62,8 +66,8 @@ amount = int that determines how many card objects are accessed from the start o
 - Same as addToHand() & mill() but adds to theVoid array instead.
 ##### shuffle()
 - Randomises the order of the array.
+---  
 ## <a id="grave">Grave
----
 ### Gameplay Purpose:
 This is the 'used' pile of the game. Cards that are destroyed, sacrificed, discarded etc. are sent here by default. Each player's grave is public knowledge, both players may look at eachothers grave at any time. Monsters can be 'revived' from the grave using card effects.
 ### Implementation:
@@ -83,7 +87,6 @@ Deletes card from the grave array and calls the summon() method on it.
 - Calls the voidCard() method on all card objs in the array.  
 ---  
 ## <a id="mvoid">Void
----
 ### Gampeplay Purpose:
 ### Implementation:
 ### Methods & Functions:
