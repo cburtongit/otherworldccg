@@ -5,10 +5,11 @@
 - [Support Zone](#szone)
 - [Deck](#deck)
 - [Grave](#grave)
-- [Void](#mvoid)\
+- [Void](#mvoid)
+
 
 Each player will have these zones:
-![Field zone layout](images/field.png)\
+![Field zone layout](images/field.png)
 
 ### <a id="mzones"></a>Monster Zones
 #### Gameplay Purpose:
@@ -32,9 +33,8 @@ Same as destroy() but adds destroyed card to theVoid array rather than the grave
 Remove the cardObj and add it to the player's hand array. does not 'destroy' the card in game mechanics but does remove the cardObj.
 ##### modifySP(int sp)
 Adds the value of sp to the SP value of the cardObj stored. Adding a negative value will reduce the SP!
-##### counterEffect()
+##### counterEffect \
 Sets a flag on the cardObj that it's effect cannot be used ('countered' is a game keyword).
----
 ### <a id="szone">Support Zone
 ---
 ### <a id="deck">Deck
