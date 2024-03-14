@@ -26,15 +26,15 @@ Each monsterZone should contain the following values:
 - cardObj currentCard = a card object that stores the currently assigned card
 ### Methods & Functions (monsterZone object):
 ##### destroy()
-Destroys the current card by removing the cardObj stored and sending it to the Grave obj
+- Destroys the current card by removing the cardObj stored and sending it to the Grave obj
 ##### destroyAndVoid()
-Same as destroy() but adds destroyed card to theVoid array rather than the grave
+- Same as destroy() but adds destroyed card to theVoid array rather than the grave
 ##### bounce()
-Remove the cardObj and add it to the player's hand array. does not 'destroy' the card in game mechanics but does remove the cardObj.
+- Remove the cardObj and add it to the player's hand array. does not 'destroy' the card in game mechanics but does remove the cardObj.
 ##### modifySP(int sp)
-Adds the value of sp to the SP value of the cardObj stored. Adding a negative value will reduce the SP!
+- Adds the value of sp to the SP value of the cardObj stored. Adding a negative value will reduce the SP!
 ##### counterEffect()
-Sets a flag on the cardObj that it's effect cannot be used ('countered' is a game keyword).
+- Sets a flag on the cardObj that it's effect cannot be used ('countered' is a game keyword).
 ### <a id="szone">Support Zone
 ---
 ## <a id="deck">Deck
@@ -45,23 +45,23 @@ Decks are private knowledge and can't be looked at by either player unless state
 The deck object should contain an array of 'card' objects in order of the last shuffle. This is so cards may reveal a certain number of cards from the top/bottom, put cards at the top/bottom in any order due to their effect. Variables should include a 'deck size' that stores the original number of cards in the deck, a 'current deck size' for how many cards are left and an 'is empty' variable for if the deck is empty.
 ### Methods & Functions
 ##### draw(int amount)
-Add the top X number of card(s) (first value in the 'cards' array) to the players hand.\
-amount = int that determines how many card objects are accessed from the start of the 'cards' array
+- Add the top X number of card(s) (first value in the 'cards' array) to the players hand.\
+- amount = int that determines how many card objects are accessed from the start of the 'cards' array
 ##### revealTop(int amount)
-Access the top X number of card(s) and display them to both players.\
+- Access the top X number of card(s) and display them to both players.\
 amount = int that determines how many card objects are accessed from the start of the 'cards' array
 ##### revealBottom(int amount)
-Same as revealTop() but from the bottom of the array
+- Same as revealTop() but from the bottom of the array
 ##### searchFilter(str cardName, str[] alignments, int SP, int RP, int fastRP)
-Generate a new 'card' array with 'card' objects that match specified parameters. Params are all optional, if none are provided on call it should return the original array. If the new array is empty, should return an error for now (Fail-to-find game mechanic can be added later)
+- Generate a new 'card' array with 'card' objects that match specified parameters. Params are all optional, if none are provided on call it should return the original array. If the new array is empty, should return an error for now (Fail-to-find game mechanic can be added later)
 ##### addToHand(cardObj card)
-Adds a specified card to the player's hand given it's object ID. Removes it from the card array in deck and adds to the players hand array.
+- Adds a specified card to the player's hand given it's object ID. Removes it from the card array in deck and adds to the players hand array.
 ##### mill(cardObj card)
-Same as addToHand() but instead sends it to the Grave. Instead of adding to hand array, add it to player's grave array.
+- Same as addToHand() but instead sends it to the Grave. Instead of adding to hand array, add it to player's grave array.
 ##### theVoid(cardObj card)
-Same as addToHand() & mill() but adds to theVoid array instead.
+- Same as addToHand() & mill() but adds to theVoid array instead.
 ##### shuffle()
-Randomises the order of the array.
+- Randomises the order of the array.
 ## <a id="grave">Grave
 ---
 ### Gameplay Purpose:
@@ -70,17 +70,17 @@ This is the 'used' pile of the game. Cards that are destroyed, sacrificed, disca
 Similar to the Deck obj, it consists of a card object array. 
 ### Methods & Functions:
 ##### view()
-Returns the card obj array.
+- Returns the card obj array.
 ##### voidCard(cardObj card)
-Deletes card from the array and then adds it to the void array.
+- Deletes card from the array and then adds it to the void array.
 ##### addToDeck(cardObj card, bool topDeck)
-Deletes card from the array and adds it to the begining of the deck array if topDeck is true or the bottom if false
+- Deletes card from the array and adds it to the begining of the deck array if topDeck is true or the bottom if false
 ##### addToHand(cardObj card)
-Deletes the card from the array and adds it to the hand array.
+- Deletes the card from the array and adds it to the hand array.
 ##### revive(cardObj card, bool ownField)
 Deletes card from the grave array and calls the summon() method on it.
-##### voidAll()  
-Calls the voidCard() method on all card objs in the array.  
+##### voidAll()
+- Calls the voidCard() method on all card objs in the array.  
 ---  
 ## <a id="mvoid">Void
 ---
