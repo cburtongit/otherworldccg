@@ -79,8 +79,9 @@ Deletes card from the array and adds it to the begining of the deck array if top
 Deletes the card from the array and adds it to the hand array.
 ##### revive(cardObj card, bool ownField)
 Deletes card from the grave array and calls the summon() method on it.
-##### voidAll()\
-Calls the voidCard() method on all card objs in the array.
+##### voidAll()  
+Calls the voidCard() method on all card objs in the array.  
+---  
 ## <a id="mvoid">Void
 ---
 ### Gampeplay Purpose:
