@@ -1,12 +1,20 @@
 # Components
 ---
+## Card
+- [Card Info](#cardinfo)
+- [Card Object](#cardobject)
+- [Monster Card](#monscard)
+    - [Token](#tokencard)
+- [Support Card](#suppcard)
+
+---
 ## Field (Play area)
 - [Monster Zones](#mzones)
+    - [monsterZone object](#monzobj)
 - [Support Zone](#szone)
 - [Deck](#deck)
 - [Grave](#grave)
 - [Void](#mvoid)
-
 
 Each player will have these zones:
 ![Field zone layout](images/field.png)
@@ -19,12 +27,12 @@ An array storing 5 'monsterZone' objects would be a good way to store it. Each '
 ### Methods & Functions (Encapsulating Object):
 ##### DestroyAll()
 Calls the destroy() method on each of the monsterZone objects. 'card' objects that are immune to destruction are dealt with within this destroy() method.
-### Implementation (monsterZone object):
+### <a id="monszobj"></a>Implementation \(monsterZone Object\)  
 Each monsterZone should contain the following values:
 - int zoneID = stores the number of the zone (from left)
 - bool isOccupied = determines if the zone is able to be assigned a card obj. A zone may be locked off by a card effect to it is treated as occupied
 - cardObj currentCard = a card object that stores the currently assigned card
-### Methods & Functions (monsterZone object):
+### Methods & Functions \(monsterZone object\):
 ##### destroy()
 - Destroys the current card by removing the cardObj stored and sending it to the Grave obj
 ##### destroyAndVoid()
